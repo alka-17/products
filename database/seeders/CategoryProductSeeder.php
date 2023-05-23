@@ -13,19 +13,13 @@ class CategoryProductSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('category_products')->insert([
+        DB::table('product_categories')->insert([
             [
-                "product_id" => 1,
-                "category_id" => 2,
+                "product_id" => 5,
+                "category_id" => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
-            [
-                "product_id" => 2,
-                "category_id" => 2,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+            ]
         ]);
     }
 }

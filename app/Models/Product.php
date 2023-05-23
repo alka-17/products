@@ -11,10 +11,15 @@ class Product extends Model
     use HasFactory;
 
     protected $table = 'products';
-    public $fillables = ['image','name','price','description','quantity'];
+    public $fillable = ['image','name','price','description','quantity'];
 
     public function categories()
     {
-        return $this->belongsToMany(Category::class,'category_products');
+        return $this->belongsToMany(Category::class,'product_categories');
+    }
+
+    public function cart()
+    {
+        return $this->hasOne(Cart::class)->where('quantity', '>', 0);
     }
 }

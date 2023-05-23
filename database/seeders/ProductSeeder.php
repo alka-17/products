@@ -15,23 +15,14 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             [
-                "image" => 'image\footbal2.jpg',
-                "name" => 'Football',
-                "price" => 300,
-                "description" => "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
+                "image" => 'image\model-858748_960_720.jpg',
+                "name" => 'Black dress for Women',
+                "price" => 2000,
+                "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat excepturi odio recusandae aliquid ad impedit autem commodi earum voluptatem laboriosam?",
                 "quantity" => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
-            [
-                "image" => 'image\football1.jpg',
-                "name" => 'Football',
-                "price" => 300,
-                "description" => "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-                "quantity" => 10,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+            ]
            ]);
     }
 }

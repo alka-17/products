@@ -7,14 +7,14 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-
     /**
      * Method to fetch data from database and send to view
      **/
     public function index()
     {
-        $lists = Product::with('categories')->get();       
-        return view('products', compact('lists'));
+        $lists = Product::with('categories')->get();
+
+        return view('products.index', compact('lists'));
     }
 
     /**
@@ -22,8 +22,8 @@ class ProductController extends Controller
      **/
     public function detail(Request $request, $id)
     {
-        $product = Product::with('categories')->find($id);
+        $product = Product::with('categories:name')->withCount('cart')->find($id);
 
-        return view('product-detail', compact('product'));
+        return view('products.detail', compact('product'));
     }
 }
